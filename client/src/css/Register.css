@@ -1,0 +1,88 @@
+.container {
+    width: 1500px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.page-content {
+    margin-top: 35px;
+
+     /* Adjust based on header height */
+}
+
+.register-form {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 370px;
+    text-align: center;
+    margin-top:-250px;
+    padding-bottom:12px;
+    padding-top:12px;
+    margin-left:-140px;
+    
+}
+
+.register-form h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.input-group1 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    background-color: white;
+    border-radius: 30px;
+    padding: 10px;
+    color:black;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.input-group1 .icon {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.input-group1 input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    font-size: 16px;
+    padding: 10px;
+    color:black;
+    border-radius: 30px;
+    background-color: white;
+}
+
+button {
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+.register-form p {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.register-form a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+

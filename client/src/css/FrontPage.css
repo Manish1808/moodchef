@@ -1,0 +1,75 @@
+.container2{
+    margin:20px 0px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top:120px;
+    background-color:linear-gradient( 100.5deg, rgba(148,146,236,1) 17.7%, rgba(245,194,194,1) 76.1% ) ;
+}
+.container2 h1{
+    font-size:70px;
+    font-family: 'Genty Demo', sans-serif;
+    font-weight:100;
+    margin-top:10px;
+    text-align:center;
+    margin-top:90px;
+}
+.container2 h2{
+    font-size:50px;
+    font-family: 'Genty Demo', sans-serif;
+    font-weight:100;
+    margin-top:-20px;
+    text-align:center;
+}
+.im{
+    padding:0px 40%;
+}
+.im-content{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.btn{
+    background-image: linear-gradient( 100.5deg,  rgba(148,146,236,1) 17.7%, rgba(245,194,194,1) 76.1% );
+    color:black;
+    width: 50%;
+    height:60px;
+    margin:0px 150px;
+    margin-bottom:60px;
+    transition: all 0.5s;
+    box-sizing: border-box;
+    border:none;
+    font-family:'Genty Demo',sans-serif ;
+    border-radius:30px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.btn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.btn span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+.btn:hover span {
+    padding-right: 25px;
+}
+  
+.btn:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+.btn:hover {
+    background-image: linear-gradient(100.5deg, rgba(170, 170, 250, 1) 17.7%, rgba(255, 220, 220, 1) 76.1%);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+} 

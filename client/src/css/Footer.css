@@ -1,0 +1,84 @@
+.footer {
+    text-align: center;
+    height: auto; /* Adjust height dynamically */
+    padding-top:-3px;
+    padding-bottom:-10px;
+    margin-top: 45px;
+    margin-left:-35px;
+    background-color: black;
+    width: 1450px; /* Make it fully responsive */
+    color: #fff;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Ensure even spacing */
+    align-items: center; /* Align vertically */
+    padding: 0 50px; /* Adjust padding for proper spacing */
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align left */
+}
+
+.img-title {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adjust spacing between logo and text */
+}
+
+.footer-logo img {
+    width: 80px;
+    height: 80px;
+    margin-left: 115px;
+}
+
+.footer h2 {
+    font-size: 22px;
+    color: white;
+    font-family: 'Berkshire Swash', sans-serif;
+    text-align: left;
+    
+}
+
+.footer-logo p {
+    text-align: center;
+    font-family: 'Alef', sans-serif;
+    margin-top: -60px;
+    padding-left:50px;
+    max-width: 300px;
+    padding-top:60px;
+     /* Limit width to maintain structure */
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap; /* Allow multiple lines */
+    gap: 10px;
+    justify-content: flex-end;
+    max-width: 500px; /* Keep within limits */
+    padding-right: 40px;
+    align-content:center;
+    padding-top:-100px;
+}
+
+.food-item a {
+    color: rgba(182, 99, 255, 0.9);
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+footer a {
+    color: #f1c40f;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: -25px;
+}

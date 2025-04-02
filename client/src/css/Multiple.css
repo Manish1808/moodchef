@@ -1,0 +1,43 @@
+.preferences-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.left-column, .right-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0px 15px; /* Adds space between columns */
+}
+
+.preferences-form label {
+  font-size: 18px;
+  margin: 10px 10px;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+  display: none;
+}
+
+.checkbox-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 8px;
+  background-color: #ccc;
+  color: #4c0b0b;
+  font-size: 18px;
+  font-weight: bold;
+  border: 2px solid #4c0b0b;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.1s ease, color 0.1s ease;
+}
+
+/* Selected state with a glowing effect */
+.checkbox-button.selected {
+  background-color: #4c0b0b;
+  color: white;
+  box-shadow: 0 0 8px 2px rgba(76, 11, 11, 0.6);
+}
