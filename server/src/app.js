@@ -41,7 +41,7 @@ import userAuthRoute from "./routes/userAuth.route.js";
 import recipeRoutes from "./routes/recipeRoutes.js"; // Import recipe routes
 
 // Use routes
-app.use("/api/v1/auth", userAuthRoute);
+app.use("/api/auth", userAuthRoute);
 app.use("/api", recipeRoutes); // Register the recipe route
 
 export { app };

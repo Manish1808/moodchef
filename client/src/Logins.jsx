@@ -1,49 +1,81 @@
-import React from "react";
+// Login.jsx
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import { FaUser, FaLock } from "react-icons/fa";
+import "./css/Login.css";
 import Header from "./Header";
 import Background from "./Background";
-import { useNavigate } from "react-router-dom";
-import "./css/Login.css"; // Ensure you create this CSS file with your provided sty=> 
-  export default function Logins(){
+
+export default function Login() {
     const navigate = useNavigate();
-  return (
-    <>
-    <Background
-      backgroundImage="https://as2.ftcdn.net/v2/jpg/01/03/44/23/1000_F_103442398_egouQ0FOh40HbV8nYlEmEeZ5raPdbUZ5.jpg"
-      
-    >
-    <Header/>
-    <div className="container1">
-      <div className="login-box">
-        <h2>LOGIN</h2>
-        <form>
-          <div className="input-group">
-            <label htmlFor="username">
-              <FaUser />
-            </label>
-            <input type="text" id="username" placeholder="Enter your username" />
-          </div>
+    const [formData, setFormData] = useState({
+        fullname: "",
+        password: ""
+    });
 
-          <div className="input-group">
-            <label htmlFor="password">
-              <FaLock />
-            </label>
-            <input type="password" id="password" placeholder="Enter your password" />
-          </div>
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
 
-          <button type="submit" className="login-btn">Login</button>
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-          <div className="forgot-links">
-            Forgot your password? <a href="#">Click Here</a><br />
+        try {
+            await axios.post(
+                "http://localhost:5000/api/auth/login",
+                formData,
+                { withCredentials: true }
+            );
 
-            Don’t have an account? <a href="#" onClick={() => navigate("/register")}>Register</a>
-          </div>
-        </form>
-      </div>
-    </div>
-    </Background>
-    </>
-  );
-};
+            alert("Login Successful");
+            navigate("/home");
+        } catch (err) {
+            alert(err.response?.data?.message || "Login failed");
+        }
+    };
 
-
+    return (
+        <>
+            <Background backgroundImage="https://as2.ftcdn.net/v2/jpg/01/03/44/23/1000_F_103442398_egouQ0FOh40HbV8nYlEmEeZ5raPdbUZ5.jpg">
+                <Header />
+                <div className="container1">
+                    <div className="login-box">
+                        <h2>LOGIN</h2>
+                        <form onSubmit={handleSubmit}>
+                            <div className="input-group">
+                                <FaUser className="icon" />
+                                <input
+                                    type="text"
+                                    name="fullname"
+                                    placeholder="Enter your name"
+                                    onChange={handleChange}
+                                    value={formData.fullname}
+                                />
+                            </div>
+                            <div className="input-group">
+                                <FaLock className="icon" />
+                                <input
+                                    type="password"
+                                    name="password"
+                                    placeholder="Enter your password"
+                                    onChange={handleChange}
+                                    value={formData.password}
+                                />
+                            </div>
+                            <button className="login-btn" type="submit">Login</button>
+                        </form>
+                        <div className="forgot-links">
+                            <p>
+                                Not having an account?{" "}
+                                <button onClick={() => navigate("/register")} className="link-button">
+                                    Register
+                                </button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </Background>
+        </>
+    );
+}

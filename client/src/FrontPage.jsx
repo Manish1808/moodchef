@@ -18,7 +18,7 @@ return (
         <div className="img-content">
             <h1>Welcome to MoodChef</h1>
             <h2>Where Mood meets Flavor</h2>
-            <button className="btn" onClick={() => navigate("/home")}>
+            <button className="btn" onClick={() => navigate("/Register")}>
             <span>Let's Dive in</span>
             </button>
         </div>
