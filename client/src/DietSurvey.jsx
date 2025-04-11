@@ -18,8 +18,8 @@ const DietSurvey = () => {
 
   const questions = [
     { id: "preference", question: "Do you prefer Hot or Cold?", options: ["Hot", "Cold"], type: "radio" },
-    { id: "hotFood", question: "What kind of hot food do you prefer?", options: ["Soups and Stews", "Pizzas and Flatbreads", "Grains and Rice Dishes", "Curries and Spicy Dishes", "Pastas and Casseroles", "Snacks"], type: "radio" },
-    { id: "coldFood", question: "What kind of cold food do you prefer?", options: ["Salads", "Cold Appetizers", "Cold Soups", "Desserts", "Cold Seafood Dishes", "Cold Beverages", "Starters", "Smoothies"], type: "radio" },
+    { id: "hotFood", question: "What kind of hot food do you prefer?", options: ["Soups and Stews", "Pizzas and Flatbreads", "Grains and Rice Dishes", "Curries and Spicy Dishes", "Pastas", "Snacks"], type: "radio" },
+    { id: "coldFood", question: "What kind of cold food do you prefer?", options: ["Salads", "Cold Appetizers", "Desserts", "Cold Seafood Dishes", "Cold Beverages", "Starters", "Smoothies"], type: "radio" },
     { id: "dietaryRestriction", question: "Do you have any dietary restrictions?", options: ["Yes", "No"], type: "radio" },
     { id: "dietaryPreferences", question: "What are your dietary preferences?", options: ["Gluten-Free", "Sugar-Free", "Fat-free", "Dairy-free", "Vegan", "Vegetarian"], type: "radio" },
   ];
@@ -48,7 +48,7 @@ const DietSurvey = () => {
       - The user is feeling ${mood}, so the recipe should be comforting and mood-boosting.`;
 
     try {
-      const response = await axios.post("http://localhost:8002/api/generate-recipe", { prompt });
+      const response = await axios.post("http://localhost:5000/api/generate-recipe", { prompt });
 
       if (response.data.recipe) {
         navigate("/recipe-result", { state: { recipe: response.data.recipe } });
@@ -62,40 +62,106 @@ const DietSurvey = () => {
   };
 
   return (
-    <div style={{ padding: "20px", maxWidth: "600px", margin: "auto" }}>
-      <h1>Diet Survey</h1>
-      <p><strong>Your current mood:</strong> {mood}</p>
+    <div style={{
+      padding: "40px 20px",
+      maxWidth: "600px",
+      margin: "-50px auto",
+      backgroundColor: "#fff8f0",
+      borderRadius: "20px",
+      boxShadow: "0 8px 20px rgba(0, 0, 0, 0.1)",
+      fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+    }}>
+      <h1 style={{ textAlign: "center", color: "#4c0b0b", marginBottom: "-10px" }}>🍽️ Diet Survey</h1>
 
-      <div style={{ marginBottom: "20px", padding: "10px", border: "1px solid #ccc", borderRadius: "5px" }}>
-        <p><strong>{questions[currentQuestionIndex].question}</strong></p>
+      <p style={{
+        textAlign: "center",
+        fontWeight: "bold",
+        fontSize: "18px",
+        marginBottom: "20px",
+        color: "#555"
+      }}>
+        Mood: <span style={{ color: "#d35400" }}>{mood}</span>
+      </p>
+
+      <div style={{
+        marginBottom: "30px",
+        padding: "20px",
+        border: "1px solid #ddd",
+        borderRadius: "15px",
+        backgroundColor: "#fff",
+        boxShadow: "inset 0 2px 6px rgba(0,0,0,0.05)"
+      }}>
+        <p style={{ fontWeight: "600", fontSize: "16px", marginBottom: "10px" }}>
+          {questions[currentQuestionIndex].question}
+        </p>
+
         {questions[currentQuestionIndex].options.map((option) => (
-          <label key={option} style={{ display: "block", marginBottom: "5px" }}>
+          <label key={option} style={{
+            display: "block",
+            marginBottom: "10px",
+            fontSize: "15px",
+            cursor: "pointer"
+          }}>
             <input
               type="radio"
               name={questions[currentQuestionIndex].id}
               value={option}
               checked={answers[questions[currentQuestionIndex].id] === option}
               onChange={(e) => handleChange(questions[currentQuestionIndex].id, e.target.value)}
-            />{" "}
+              style={{ marginRight: "10px" }}
+            />
             {option}
           </label>
         ))}
       </div>
 
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center"
+      }}>
         {currentQuestionIndex > 0 && (
-          <button onClick={prevQuestion} style={{ padding: "10px", background: "gray", color: "white", border: "none", borderRadius: "5px" }}>
-            Previous
+          <button onClick={prevQuestion} style={{
+            padding: "12px 25px",
+            backgroundColor: "#999",
+            color: "#fff",
+            border: "none",
+            borderRadius: "8px",
+            fontSize: "15px",
+            cursor: "pointer",
+            transition: "background 0.3s ease"
+          }}>
+            ⬅ Previous
           </button>
         )}
 
         {currentQuestionIndex < questions.length - 1 ? (
-          <button onClick={nextQuestion} style={{ padding: "10px", background: "blue", color: "white", border: "none", borderRadius: "5px" }}>
-            Next
+          <button onClick={nextQuestion} style={{
+            padding: "12px 25px",
+            backgroundColor: "#4c0b0b",
+            color: "#fff",
+            border: "none",
+            borderRadius: "8px",
+            fontSize: "15px",
+            cursor: "pointer",
+            marginLeft: "auto",
+            transition: "background 0.3s ease"
+          }}>
+            Next ➡
           </button>
         ) : (
-          <button onClick={generateRecipe} style={{ padding: "10px", background: "green", color: "white", border: "none", borderRadius: "5px" }}>
-            Generate Recipe
+          <button onClick={generateRecipe} style={{
+            padding: "12px 25px",
+            backgroundColor: "#27ae60",
+            color: "#fff",
+            border: "none",
+            borderRadius: "8px",
+            fontSize: "15px",
+            cursor: "pointer",
+            marginLeft: "auto",
+            transition: "background 0.3s ease"
+          }}>
+            🍳 Generate Recipe
           </button>
         )}
       </div>

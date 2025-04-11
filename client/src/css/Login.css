@@ -1,15 +1,15 @@
 .container1 {
-            width: 590px;
-            height: 500px;
-            padding-top:-10px;
-            margin: 40px auto;
-            margin-top:70px;
-            background-color: rgba(255, 255, 255, 1);
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(2, 2, 2, 0.8);
-            overflow: hidden;
-            position: relative;
-          }
+  width: 590px;
+  height: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(2, 2, 2, 0.8);
+  overflow: hidden;
+  position: absolute;
+  top: 57%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
           .login-box {
             padding: 40px;
             text-align: center;

@@ -1,11 +1,12 @@
 // Login.jsx
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { FaUser, FaLock } from "react-icons/fa";
 import "./css/Login.css";
 import Header from "./Header";
 import Background from "./Background";
+
 
 export default function Login() {
     const navigate = useNavigate();
@@ -68,9 +69,9 @@ export default function Login() {
                         <div className="forgot-links">
                             <p>
                                 Not having an account?{" "}
-                                <button onClick={() => navigate("/register")} className="link-button">
-                                    Register
-                                </button>
+                                <Link to="/register" className="link-button">
+            Register
+        </Link>
                             </p>
                         </div>
                     </div>

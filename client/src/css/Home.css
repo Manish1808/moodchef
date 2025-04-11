@@ -2,36 +2,36 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* Changed from center to avoid pushing content */
     text-align: center;
-    height: 100vh;
-    padding: 20px;
-    margin-left:90px;
+    padding: 10px;
+    margin-left: 40px;
+    gap: 20px; /* Add consistent spacing between sections */
 }
 
 .text-container {
     max-width: 600px;
     text-align: center;
+    margin-bottom: -30px;
 }
 
 .text-container h3 {
-    font-size: 30px;
+    font-size: 25px;
     font-family: 'Alef', sans-serif;
     color: black;
     font-weight: bold;
-    background-color: #333;
     padding: 5px;
-    margin-top: 70px;
+    margin-top: 2px; /* Reduced from 70px */
     border-radius: 8px;
-    background-color:antiquewhite;
+    background-color: antiquewhite;
 }
 
 .text-container h2 {
-    font-size: 40px;
+    font-size: 30px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: black;
-    margin-top: 20px;
-    margin-bottom:10px;
+    margin-top: -20px; /* Reduced */
+    margin-bottom: 5px;
 }
 
 /* Mood Options */
@@ -39,8 +39,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
-    margin: 40px 0;
+    gap: 20px; /* Reduced */
+    margin: 20px 0; /* Reduced */
 }
 
 .mood {
@@ -48,8 +48,8 @@
 }
 
 .mood img {
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
 }
 
@@ -62,18 +62,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: -60px; /* Add some space before footer */
 }
 
 .input-section input {
-    padding: 15px;
+    padding: 12px;
     font-size: 18px;
     border-radius: 30px 0 0 30px;
-    width: 350px;
+    width: 320px;
     border: 1px solid black;
     outline: none;
     background-color: white;
-    color:black;
-    margin-top:-2px;
+    color: black;
+    margin-top:-40px
 }
 
 .input-section .submit-btn {
@@ -81,11 +82,12 @@
     border: 2px solid black;
     border-radius: 0 30px 30px 0;
     width: 60px;
-    height:55px;
+    height: 50px;
+    margin-top:-40px;
     color: white;
     font-size: 25px;
     cursor: pointer;
-    padding-top:8px;
+    padding-top: 8px;
 }
 
 .submit-btn:active {

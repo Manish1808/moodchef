@@ -7,8 +7,7 @@ return (
     <div className="flex">
         <div className="footer-logo">
         <div className="img-title">
-            <img src="C:/Users/meena/Downloads/13.png" alt="MoodChef Logo" />
-            <h2>Mood<br />Chef</h2>
+            <img src="/Mood_chef.png" alt="MoodChef Logo" />
         </div>
         <p>Elevate Your Meals, Elevate Your Mood!<br />
             Start cooking for your happiness with MoodChef today!

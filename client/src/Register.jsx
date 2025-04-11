@@ -1,6 +1,6 @@
 // Register.jsx
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { FaUser, FaLock } from "react-icons/fa";
 import "./css/Register.css";
@@ -50,9 +50,10 @@ export default function Register() {
 
     return (
         <>
-            <Header />
+           
             <div className="page-content">
                 <Background backgroundImage="https://as2.ftcdn.net/v2/jpg/01/03/44/23/1000_F_103442398_egouQ0FOh40HbV8nYlEmEeZ5raPdbUZ5.jpg">
+                    <Header/>
                     <div className="container">
                         <section className="register-form">
                             <h1>REGISTER</h1>
@@ -91,9 +92,9 @@ export default function Register() {
                             </form>
                             <p>
                                 Already have an account?{" "}
-                                <button onClick={() => navigate("/login")} className="link-button">
-                                    Login
-                                </button>
+                                <Link to="/login" className="link-button">
+           Login
+        </Link>
                             </p>
                         </section>
                     </div>

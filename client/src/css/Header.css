@@ -1,53 +1,81 @@
+/* Header Container */
 .header {
     position: fixed;
     top: 0px;
     left: 0;
     width: 100%;
     z-index: 100;
-    background-color: white;
+  
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-top: 20px;
-    height: 10%; 
+    height: 10%;
 }
 
+/* Push body content down below the fixed header */
 body {
-    padding-top: 60px; 
+    padding-top: 60px;
+}
+
+/* Logo - horizontally aligned */
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-left: 20px;
 }
 
 .logo img {
-    height: 35px; /* Reduced from 40px */
-    margin-right: 8px; /* Slightly reduced margin */
+    height: 80px;
+    margin: 0;
+    margin-top:-25px;
 }
 
+.logo h3 {
+    font-size: 30px;
+    margin: 0;
+    margin-left: 460px;
+    padding: 0;
+    font-family: 'Genty Demo', sans-serif;
+    font-weight: bold;
+}
+
+/* Navigation container */
 nav {
     display: flex;
-    gap: 12px; /* Reduced gap */
+    gap: 8px; /* Reduced gap */
+    margin-right:50px; /* Shifted slightly to the left */
 }
 
+/* Buttons inside nav */
 nav button {
-    font-size: 14px; /* Slightly reduced font size */
-    padding: 6px 10px; /* Reduced padding */
+    font-size: 14px;
+    padding: 6px 10px;
 }
 
+/* Navigation bar layout */
 .navi {
-    gap: 25px; /* Reduced from 35px */
-    margin-top: -30px; /* Adjusted for alignment */
-    padding: 0px 2px; /* Reduced padding */
+    display: flex;
+    gap: 20px; /* Reduced gap from 25px */
+    justify-content: center;
+    margin-top: -30px;
+    margin-bottom: -10px;
+    padding: 0px 2px;
+    border-radius: 5px;
 }
 
-/* Dropdown Menu Adjustment */
+/* Dropdown icon */
 .hamburger-icon {
-    font-size: 22px; /* Slightly reduced */
+    font-size: 22px;
+    margin-left: 10px;
 }
 
+/* Dropdown menu */
 .dropdown-menu {
-    top: 35px; /* Adjusted position */
-}
-  
-  .dropdown-menu {
     position: absolute;
     right: 0;
     top: 40px;
@@ -57,60 +85,40 @@ nav button {
     display: flex;
     flex-direction: column;
     width: 150px;
-  }
-  
-  .dropdown-menu p {
+}
+
+.dropdown-menu p {
     padding: 10px;
     cursor: pointer;
     text-align: center;
     margin: 0;
-  }
-  
-  .dropdown-menu p:hover {
-    background: #f5f5f5;
-  }
-  
-
-
-
-
-/* Different Header Background Colors */
-
-.question1-header { background-color: #4c0b0b; }  /* Default */
-.explore-header { background-color: #4c0b0b; } /* Blue */
-.recipes-header { background-color: #d35400; } /* Orange */
-.login-header { background-color: #E16A54; } /* Purple */
-.register-header { background-color: burlywood;}
-.home-header{background-color: blueviolet;}
-.recipe-header{background-color: #d35400;}
-.exp-header{background-color: skyblue;}
-
-
-/* Default Navigation */
-.navi {
-    display: flex;
-    gap: 35px;
-    justify-content: center;
-    margin-top: -35px;
-    margin-bottom: -10px;
-    padding: 1px 2px;
-    border-radius: 5px;
 }
 
-/* Different Navigation Background Colors */
- /* White */
-.question1-nav{background-color: transparent;}
-.explore-nav { background-color: #4c0b0b; } /* Blue */
-.recipes-nav { background-color: #d35400; } /* Orange */
-.login-nav { background-color: #E16A54; } /* Purple */
-.register-nav { background-color: burlywood;}
-.home-nav{ background-color: blueviolet;}
-.recipe-nav{background-color: #d35400;}
-.exp-nav{background-color: skyblue;}
+.dropdown-menu p:hover {
+    background: #f5f5f5;
+}
 
+/* Header Background Colors */
+.question1-header { background-color: #4c0b0b; }
+.explore-header { background-color: #4c0b0b; }
+.recipes-header { background-color: #d35400; }
+.login-header { background-color: #E16A54; }
+.register-header { background-color: skyblue; }
+.home-header { background-color: blueviolet; }
+.recipe-header { background-color: #d35400; }
+.exp-header { background-color: skyblue; }
 
+/* Navigation Backgrounds */
+.question1-nav { background-color: transparent; }
+.explore-nav { background-color: #4c0b0b; }
+.recipes-nav { background-color: #d35400; }
+.login-nav { background-color: #E16A54; }
+.register-nav { background-color: burlywood; }
+.home-nav { background-color: blueviolet; }
+.recipe-nav { background-color: #d35400; }
+.exp-nav { background-color: skyblue; }
 
-/* Button Styles */
+/* Navigation Buttons */
 .navi button {
     border: none;
     padding: 7px 10px;
@@ -120,8 +128,6 @@ nav button {
     font-weight: bold;
     cursor: pointer;
     font-size: 15px;
-
-    /* Ensure transition applies */
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
@@ -129,4 +135,3 @@ nav button {
     background-color: #f1c40f;
     color: #4c0b0b;
 }
-

@@ -31,7 +31,6 @@ export default function Home() {
 
   return (
     <>
-      <Background backgroundImage="/background.jpg">
         <Header />
         <main className="main-content">
           <div className="text-container">
@@ -61,7 +60,7 @@ export default function Home() {
           </div>
         </main>
         <Footer />
-      </Background>
+      
     </>
   );
 }

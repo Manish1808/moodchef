@@ -74,7 +74,7 @@ export default function Header() {
   return (
     <header className={getHeaderClass()}>
       <div className="logo">
-        <img src="logo.png" alt="MoodChef Logo" />
+        <img src="/Mood_chef.png" alt="MoodChef Logo" />
         <h3>MOODCHEF</h3>
       </div>
       <nav className={getNavClass()}>
