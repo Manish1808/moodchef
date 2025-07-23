@@ -68,7 +68,7 @@ MoodChef/
 
   ### 1. Clone the repo
 
-        git clone https://github.com/Shreyatiru04/mini.git
+        git clone https://github.com/Manish1808/moodchef
 
   ### 2. Install dependencies
 
@@ -86,8 +86,4 @@ MoodChef/
         node server.js
 
 ## 👩‍💻 Authors
-- Shaik Sana
-
-- Tirunagari Shreya
-
 - Pandiri Sai Manish
